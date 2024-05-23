@@ -1,0 +1,69 @@
+-----------------------------------------
+|                PokerGame               |
+-----------------------------------------
+| - players: list                        |
+| - deck: Deck                           |
+-----------------------------------------
+| + start_game(): void                   |
+| + deal_initial_cards(): void           |
+| + determine_winner(): Player           |
+| + play_round(): void                   |
+-----------------------------------------
+
+-----------------------------------------
+|                 Player                |
+-----------------------------------------
+| - name: str                           |
+| - chips: int                          |
+| - hand: Hand                          |
+-----------------------------------------
+| + make_bet(amount: int): void         |
+| + fold(): void                        |
+-----------------------------------------
+
+-----------------------------------------
+|                  Bot                  |
+-----------------------------------------
+| << herda de Player >>                 |
+-----------------------------------------
+| + make_decision(): void               |
+-----------------------------------------
+
+-----------------------------------------
+|                 Hand                  |
+-----------------------------------------
+| - cards: list                         |
+-----------------------------------------
+| + add_card(card: Card): void          |
+| + get_score(): int                    |
+| + is_flush(): bool                    |
+| + is_straight(): bool                 |
+| + is_full_house(): bool               |
+| + is_four_of_a_kind(): bool           |
+| + is_straight_flush(): bool           |
+-----------------------------------------
+
+-----------------------------------------
+|                Card                   |
+-----------------------------------------
+| - rank: str                           |
+| - suit: str                           |
+-----------------------------------------
+
+-----------------------------------------
+|                Deck                   |
+-----------------------------------------
+| - cards: list                         |
+-----------------------------------------
+| + shuffle(): void                     |
+| + draw_card(): Card                   |
+-----------------------------------------
+
+Possível representação UML das classes:
+
+Esta é uma representação básica das classes e seus relacionamentos. 
+A classe `PokerGame` é a classe principal que gerencia o jogo. 
+Ela contém uma lista de jogadores (`Player` e `Bot`), bem como um objeto `Deck` para lidar com as cartas. 
+Cada jogador tem uma mão (`Hand`) que contém suas cartas. 
+A classe `Hand` representa a mão atual de um jogador e contém métodos para verificar a pontuação da mão.
+A classe `Card` representa uma carta do baralho, e a classe `Deck` representa o baralho em si, com métodos para embaralhar e distribuir cartas.
